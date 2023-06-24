@@ -1,0 +1,28 @@
+import random
+
+class RecipeGenerator:
+    def __init__(self):
+        self.ingredients = []
+
+    def add_ingredient(self, ingredient):
+        self.ingredients.append(ingredient)
+        print(f"Ingredient '{ingredient}' added successfully.")
+
+    def generate_recipe(self):
+        if not self.ingredients:
+            print("No ingredients added.")
+        else:
+            recipe = random.sample(self.ingredients, k=3)
+            print("Generated Recipe:")
+            for ingredient in recipe:
+                print(ingredient)
+
+if __name__ == '__main__':
+    recipe_generator = RecipeGenerator()
+
+    recipe_generator.add_ingredient("Chicken")
+    recipe_generator.add_ingredient("Tomato")
+    recipe_generator.add_ingredient("Onion")
+    recipe_generator.add_ingredient("Garlic")
+
+    recipe_generator.generate_recipe()
